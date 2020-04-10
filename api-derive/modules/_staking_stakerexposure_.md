@@ -7,6 +7,7 @@
 ### Functions
 
 * [stakerExposure](_staking_stakerexposure_.md#stakerexposure)
+* [stakerExposureOver](_staking_stakerexposure_.md#stakerexposureover)
 
 ## Functions
 
@@ -14,7 +15,7 @@
 
 ▸ **stakerExposure**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/staking/stakerExposure.ts:13](https://github.com/polkadot-js/api/blob/afdb476796/packages/api-derive/src/staking/stakerExposure.ts#L13)*
+*Defined in [packages/api-derive/src/staking/stakerExposure.ts:40](https://github.com/polkadot-js/api/blob/9ba91a3851/packages/api-derive/src/staking/stakerExposure.ts#L40)*
 
 **Parameters:**
 
@@ -32,3 +33,28 @@ Name | Type |
 ------ | ------ |
 `accountId` | Uint8Array &#124; string |
 `withActive?` | undefined &#124; false &#124; true |
+
+___
+
+###  stakerExposureOver
+
+▸ **stakerExposureOver**(`api`: ApiInterfaceRx): *function*
+
+*Defined in [packages/api-derive/src/staking/stakerExposure.ts:14](https://github.com/polkadot-js/api/blob/9ba91a3851/packages/api-derive/src/staking/stakerExposure.ts#L14)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`api` | ApiInterfaceRx |
+
+**Returns:** *function*
+
+▸ (`accountId`: Uint8Array | string, `eras`: EraIndex[]): *Observable‹DeriveStakerExposure[]›*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`accountId` | Uint8Array &#124; string |
+`eras` | EraIndex[] |
