@@ -6,41 +6,16 @@
 
 ### Functions
 
+* [_stakerPoints](_staking_stakerpoints_.md#_stakerpoints)
 * [stakerPoints](_staking_stakerpoints_.md#stakerpoints)
-* [stakerPointsOver](_staking_stakerpoints_.md#stakerpointsover)
 
 ## Functions
 
-###  stakerPoints
+###  _stakerPoints
 
-▸ **stakerPoints**(`api`: ApiInterfaceRx): *function*
+▸ **_stakerPoints**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/staking/stakerPoints.ts:30](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/stakerPoints.ts#L30)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`api` | ApiInterfaceRx |
-
-**Returns:** *function*
-
-▸ (`accountId`: Uint8Array | string, `withActive?`: undefined | false | true): *Observable‹DeriveStakerPoints[]›*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`accountId` | Uint8Array &#124; string |
-`withActive?` | undefined &#124; false &#124; true |
-
-___
-
-###  stakerPointsOver
-
-▸ **stakerPointsOver**(`api`: ApiInterfaceRx): *function*
-
-*Defined in [packages/api-derive/src/staking/stakerPoints.ts:14](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/stakerPoints.ts#L14)*
+*Defined in [packages/api-derive/src/staking/stakerPoints.ts:14](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/stakerPoints.ts#L14)*
 
 **Parameters:**
 
@@ -58,3 +33,28 @@ Name | Type |
 ------ | ------ |
 `accountId` | Uint8Array &#124; string |
 `eras` | EraIndex[] |
+
+___
+
+###  stakerPoints
+
+▸ **stakerPoints**(`api`: ApiInterfaceRx): *function*
+
+*Defined in [packages/api-derive/src/staking/stakerPoints.ts:30](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/stakerPoints.ts#L30)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`api` | ApiInterfaceRx |
+
+**Returns:** *function*
+
+▸ (`accountId`: Uint8Array | string, `withActive?`: undefined | false | true): *Observable‹DeriveStakerPoints[]›*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`accountId` | Uint8Array &#124; string |
+`withActive?` | undefined &#124; false &#124; true |

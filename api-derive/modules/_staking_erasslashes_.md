@@ -6,17 +6,41 @@
 
 ### Functions
 
+* [_erasSlashes](_staking_erasslashes_.md#_erasslashes)
 * [eraSlashes](_staking_erasslashes_.md#eraslashes)
 * [erasSlashes](_staking_erasslashes_.md#erasslashes)
-* [erasSlashesOver](_staking_erasslashes_.md#erasslashesover)
 
 ## Functions
+
+###  _erasSlashes
+
+▸ **_erasSlashes**(`api`: ApiInterfaceRx): *function*
+
+*Defined in [packages/api-derive/src/staking/erasSlashes.ts:42](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/erasSlashes.ts#L42)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`api` | ApiInterfaceRx |
+
+**Returns:** *function*
+
+▸ (`eras`: EraIndex[]): *Observable‹DeriveEraSlashes[]›*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`eras` | EraIndex[] |
+
+___
 
 ###  eraSlashes
 
 ▸ **eraSlashes**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/staking/erasSlashes.ts:31](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/erasSlashes.ts#L31)*
+*Defined in [packages/api-derive/src/staking/erasSlashes.ts:31](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/erasSlashes.ts#L31)*
 
 **Parameters:**
 
@@ -40,7 +64,7 @@ ___
 
 ▸ **erasSlashes**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/staking/erasSlashes.ts:52](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/erasSlashes.ts#L52)*
+*Defined in [packages/api-derive/src/staking/erasSlashes.ts:52](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/erasSlashes.ts#L52)*
 
 **Parameters:**
 
@@ -57,27 +81,3 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `withActive?` | undefined &#124; false &#124; true |
-
-___
-
-###  erasSlashesOver
-
-▸ **erasSlashesOver**(`api`: ApiInterfaceRx): *function*
-
-*Defined in [packages/api-derive/src/staking/erasSlashes.ts:42](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/erasSlashes.ts#L42)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`api` | ApiInterfaceRx |
-
-**Returns:** *function*
-
-▸ (`eras`: EraIndex[]): *Observable‹DeriveEraSlashes[]›*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`eras` | EraIndex[] |

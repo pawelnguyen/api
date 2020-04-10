@@ -19,7 +19,7 @@
 
 • **extrinsics**? : *[AnyU8a](../modules/_types_helpers_.md#anyu8a)[]*
 
-*Defined in [packages/types/src/generic/Block.ts:23](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/types/src/generic/Block.ts#L23)*
+*Defined in [packages/types/src/generic/Block.ts:23](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/types/src/generic/Block.ts#L23)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **header**? : *[HeaderValue](_generic_block_.headervalue.md)*
 
-*Defined in [packages/types/src/generic/Block.ts:24](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/types/src/generic/Block.ts#L24)*
+*Defined in [packages/types/src/generic/Block.ts:24](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/types/src/generic/Block.ts#L24)*

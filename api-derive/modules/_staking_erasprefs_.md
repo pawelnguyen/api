@@ -6,17 +6,41 @@
 
 ### Functions
 
+* [_erasPrefs](_staking_erasprefs_.md#_erasprefs)
 * [eraPrefs](_staking_erasprefs_.md#eraprefs)
 * [erasPrefs](_staking_erasprefs_.md#erasprefs)
-* [erasPrefsOver](_staking_erasprefs_.md#erasprefsover)
 
 ## Functions
+
+###  _erasPrefs
+
+▸ **_erasPrefs**(`api`: ApiInterfaceRx): *function*
+
+*Defined in [packages/api-derive/src/staking/erasPrefs.ts:33](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/erasPrefs.ts#L33)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`api` | ApiInterfaceRx |
+
+**Returns:** *function*
+
+▸ (`eras`: EraIndex[]): *Observable‹DeriveEraPrefs[]›*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`eras` | EraIndex[] |
+
+___
 
 ###  eraPrefs
 
 ▸ **eraPrefs**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/staking/erasPrefs.ts:25](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/erasPrefs.ts#L25)*
+*Defined in [packages/api-derive/src/staking/erasPrefs.ts:25](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/erasPrefs.ts#L25)*
 
 **Parameters:**
 
@@ -40,7 +64,7 @@ ___
 
 ▸ **erasPrefs**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/staking/erasPrefs.ts:41](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/erasPrefs.ts#L41)*
+*Defined in [packages/api-derive/src/staking/erasPrefs.ts:41](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/erasPrefs.ts#L41)*
 
 **Parameters:**
 
@@ -57,27 +81,3 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `withActive?` | undefined &#124; false &#124; true |
-
-___
-
-###  erasPrefsOver
-
-▸ **erasPrefsOver**(`api`: ApiInterfaceRx): *function*
-
-*Defined in [packages/api-derive/src/staking/erasPrefs.ts:33](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/erasPrefs.ts#L33)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`api` | ApiInterfaceRx |
-
-**Returns:** *function*
-
-▸ (`eras`: EraIndex[]): *Observable‹DeriveEraPrefs[]›*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`eras` | EraIndex[] |

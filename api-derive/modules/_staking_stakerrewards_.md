@@ -6,17 +6,43 @@
 
 ### Functions
 
+* [_stakerRewards](_staking_stakerrewards_.md#_stakerrewards)
 * [stakerRewards](_staking_stakerrewards_.md#stakerrewards)
 * [stakerRewardsMulti](_staking_stakerrewards_.md#stakerrewardsmulti)
-* [stakerRewardsOver](_staking_stakerrewards_.md#stakerrewardsover)
 
 ## Functions
+
+###  _stakerRewards
+
+▸ **_stakerRewards**(`api`: ApiInterfaceRx): *function*
+
+*Defined in [packages/api-derive/src/staking/stakerRewards.ts:157](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/stakerRewards.ts#L157)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`api` | ApiInterfaceRx |
+
+**Returns:** *function*
+
+▸ (`accountId`: Uint8Array | string, `eras`: EraIndex[], `withActive?`: undefined | false | true): *Observable‹DeriveStakerReward[]›*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`accountId` | Uint8Array &#124; string |
+`eras` | EraIndex[] |
+`withActive?` | undefined &#124; false &#124; true |
+
+___
 
 ###  stakerRewards
 
 ▸ **stakerRewards**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/staking/stakerRewards.ts:187](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/stakerRewards.ts#L187)*
+*Defined in [packages/api-derive/src/staking/stakerRewards.ts:184](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/stakerRewards.ts#L184)*
 
 **Parameters:**
 
@@ -41,7 +67,7 @@ ___
 
 ▸ **stakerRewardsMulti**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/staking/stakerRewards.ts:195](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/stakerRewards.ts#L195)*
+*Defined in [packages/api-derive/src/staking/stakerRewards.ts:192](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/stakerRewards.ts#L192)*
 
 **Parameters:**
 
@@ -58,30 +84,4 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `accountIds` | string &#124; Uint8Array‹›[] |
-`withActive?` | undefined &#124; false &#124; true |
-
-___
-
-###  stakerRewardsOver
-
-▸ **stakerRewardsOver**(`api`: ApiInterfaceRx): *function*
-
-*Defined in [packages/api-derive/src/staking/stakerRewards.ts:160](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/stakerRewards.ts#L160)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`api` | ApiInterfaceRx |
-
-**Returns:** *function*
-
-▸ (`accountId`: Uint8Array | string, `eras`: EraIndex[], `withActive?`: undefined | false | true): *Observable‹DeriveStakerReward[]›*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`accountId` | Uint8Array &#124; string |
-`eras` | EraIndex[] |
 `withActive?` | undefined &#124; false &#124; true |

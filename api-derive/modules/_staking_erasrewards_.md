@@ -6,40 +6,16 @@
 
 ### Functions
 
+* [_erasRewards](_staking_erasrewards_.md#_erasrewards)
 * [erasRewards](_staking_erasrewards_.md#erasrewards)
-* [erasRewardsOver](_staking_erasrewards_.md#erasrewardsover)
 
 ## Functions
 
-###  erasRewards
+###  _erasRewards
 
-▸ **erasRewards**(`api`: ApiInterfaceRx): *function*
+▸ **_erasRewards**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/staking/erasRewards.ts:28](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/erasRewards.ts#L28)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`api` | ApiInterfaceRx |
-
-**Returns:** *function*
-
-▸ (`withActive?`: undefined | false | true): *Observable‹DeriveEraRewards[]›*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`withActive?` | undefined &#124; false &#124; true |
-
-___
-
-###  erasRewardsOver
-
-▸ **erasRewardsOver**(`api`: ApiInterfaceRx): *function*
-
-*Defined in [packages/api-derive/src/staking/erasRewards.ts:15](https://github.com/polkadot-js/api/blob/5ab24390c5/packages/api-derive/src/staking/erasRewards.ts#L15)*
+*Defined in [packages/api-derive/src/staking/erasRewards.ts:15](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/erasRewards.ts#L15)*
 
 **Parameters:**
 
@@ -56,3 +32,27 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `eras` | EraIndex[] |
+
+___
+
+###  erasRewards
+
+▸ **erasRewards**(`api`: ApiInterfaceRx): *function*
+
+*Defined in [packages/api-derive/src/staking/erasRewards.ts:28](https://github.com/polkadot-js/api/blob/e5d9bbc264/packages/api-derive/src/staking/erasRewards.ts#L28)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`api` | ApiInterfaceRx |
+
+**Returns:** *function*
+
+▸ (`withActive?`: undefined | false | true): *Observable‹DeriveEraRewards[]›*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`withActive?` | undefined &#124; false &#124; true |
