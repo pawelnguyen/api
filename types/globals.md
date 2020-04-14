@@ -73,7 +73,6 @@
 * ["generic/Block"](modules/_generic_block_.md)
 * ["generic/Call"](modules/_generic_call_.md)
 * ["generic/ConsensusEngineId"](modules/_generic_consensusengineid_.md)
-* ["generic/Digest"](modules/_generic_digest_.md)
 * ["generic/Event"](modules/_generic_event_.md)
 * ["generic/Origin"](modules/_generic_origin_.md)
 * ["generic/Vote"](modules/_generic_vote_.md)
