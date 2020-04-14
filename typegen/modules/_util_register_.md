@@ -14,7 +14,7 @@
 
 ▸ **registerDefinitions**(`registry`: TypeRegistry, `extras`: Record‹string, Record‹string, object››): *void*
 
-*Defined in [util/register.ts:7](https://github.com/polkadot-js/api/blob/5ed94a50e1/packages/typegen/src/util/register.ts#L7)*
+*Defined in [util/register.ts:7](https://github.com/polkadot-js/api/blob/7e1fa8954b/packages/typegen/src/util/register.ts#L7)*
 
 **Parameters:**
 
