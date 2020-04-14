@@ -17,7 +17,7 @@
 
 ▸ **_referendumInfo**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/democracy/referendumsInfo.ts:98](https://github.com/polkadot-js/api/blob/eae573e6a2/packages/api-derive/src/democracy/referendumsInfo.ts#L98)*
+*Defined in [packages/api-derive/src/democracy/referendumsInfo.ts:98](https://github.com/polkadot-js/api/blob/5b71abfe80/packages/api-derive/src/democracy/referendumsInfo.ts#L98)*
 
 **Parameters:**
 
@@ -42,7 +42,7 @@ ___
 
 ▸ **_referendumVotes**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/democracy/referendumsInfo.ts:71](https://github.com/polkadot-js/api/blob/eae573e6a2/packages/api-derive/src/democracy/referendumsInfo.ts#L71)*
+*Defined in [packages/api-derive/src/democracy/referendumsInfo.ts:71](https://github.com/polkadot-js/api/blob/5b71abfe80/packages/api-derive/src/democracy/referendumsInfo.ts#L71)*
 
 **Parameters:**
 
@@ -66,7 +66,7 @@ ___
 
 ▸ **_referendumsVotes**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/democracy/referendumsInfo.ts:86](https://github.com/polkadot-js/api/blob/eae573e6a2/packages/api-derive/src/democracy/referendumsInfo.ts#L86)*
+*Defined in [packages/api-derive/src/democracy/referendumsInfo.ts:86](https://github.com/polkadot-js/api/blob/5b71abfe80/packages/api-derive/src/democracy/referendumsInfo.ts#L86)*
 
 **Parameters:**
 
@@ -90,7 +90,7 @@ ___
 
 ▸ **referendumsInfo**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/democracy/referendumsInfo.ts:115](https://github.com/polkadot-js/api/blob/eae573e6a2/packages/api-derive/src/democracy/referendumsInfo.ts#L115)*
+*Defined in [packages/api-derive/src/democracy/referendumsInfo.ts:115](https://github.com/polkadot-js/api/blob/5b71abfe80/packages/api-derive/src/democracy/referendumsInfo.ts#L115)*
 
 **Parameters:**
 
