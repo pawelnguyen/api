@@ -484,7 +484,7 @@ export default abstract class Decorate<ApiType extends ApiTypes> extends Events 
       ? startSubject.pipe(
         switchMap((startKey) =>
           this._rpcCore.state.getKeysPaged(headKey, PAGE_SIZE_KEYS, startKey).pipe(
-            map((keys) => keys.map((key) => key.decodeArgsFromMeta(entry.meta)))
+            map((keys) => keys.map((key) => key.setMeta(entry.meta)))
           )
         ),
         tap((keys): void => {
@@ -496,7 +496,7 @@ export default abstract class Decorate<ApiType extends ApiTypes> extends Events 
         map((keysArr: StorageKey[][]) => keysArr.reduce((result: StorageKey[], keys) => result.concat(keys), []))
       )
       : this._rpcCore.state.getKeys(headKey).pipe(
-        map((keys) => keys.map((key) => key.decodeArgsFromMeta(entry.meta)))
+        map((keys) => keys.map((key) => key.setMeta(entry.meta)))
       );
   }
 
@@ -542,7 +542,7 @@ export default abstract class Decorate<ApiType extends ApiTypes> extends Events 
     return this._rpcCore.state.getPairs(headKey).pipe(
       map((all): [StorageKey, Codec][] =>
         all.map(([key, value]): [StorageKey, Codec] => [
-          key.decodeArgsFromMeta(entry.meta),
+          key.setMeta(entry.meta),
           this.createType(outputType, value.toHex())
         ])
       )

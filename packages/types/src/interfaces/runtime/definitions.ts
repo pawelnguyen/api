@@ -25,7 +25,9 @@ export default {
       digestLevels: 'u32'
     },
     ConsensusEngineId: 'GenericConsensusEngineId',
-    Digest: 'GenericDigest',
+    Digest: {
+      logs: 'Vec<DigestItem>'
+    },
     DigestItem: {
       _enum: {
         Other: 'Bytes', // 0
@@ -69,7 +71,7 @@ export default {
     LookupSource: 'Address',
     LookupTarget: 'AccountId',
     Moment: 'u64',
-    Origin: 'GenericOrigin',
+    Origin: 'DoNotConstruct<Origin>',
     Perbill: 'u32',
     Percent: 'u8',
     Permill: 'u32',
