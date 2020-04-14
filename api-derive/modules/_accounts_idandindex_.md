@@ -4,21 +4,9 @@
 
 ## Index
 
-### Type aliases
-
-* [AccountIdAndIndex](_accounts_idandindex_.md#accountidandindex)
-
 ### Functions
 
 * [idAndIndex](_accounts_idandindex_.md#idandindex)
-
-## Type aliases
-
-###  AccountIdAndIndex
-
-Ƭ **AccountIdAndIndex**: *[undefined | AccountId‹›, undefined | AccountIndex‹›]*
-
-*Defined in [packages/api-derive/src/accounts/idAndIndex.ts:15](https://github.com/polkadot-js/api/blob/c8f91fcf7a/packages/api-derive/src/accounts/idAndIndex.ts#L15)*
 
 ## Functions
 
@@ -26,7 +14,7 @@
 
 ▸ **idAndIndex**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/accounts/idAndIndex.ts:55](https://github.com/polkadot-js/api/blob/c8f91fcf7a/packages/api-derive/src/accounts/idAndIndex.ts#L55)*
+*Defined in [packages/api-derive/src/accounts/idAndIndex.ts:54](https://github.com/polkadot-js/api/blob/165179ebf2/packages/api-derive/src/accounts/idAndIndex.ts#L54)*
 
 **`name`** idAndIndex
 
@@ -49,7 +37,7 @@ Name | Type |
 
 **Returns:** *function*
 
-▸ (`address?`: Address | AccountId | AccountIndex | string | null): *Observable‹[AccountIdAndIndex](_accounts_idandindex_.md#accountidandindex)›*
+▸ (`address?`: Address | AccountId | AccountIndex | string | null): *Observable‹AccountIdAndIndex›*
 
 **Parameters:**
 
