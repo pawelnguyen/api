@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 import { AnyNumber, Codec, IExtrinsic } from '@polkadot/types/types';
-import { HashMap, Option, Raw, Vec } from '@polkadot/types/codec';
+import { HashMap, Option, Vec } from '@polkadot/types/codec';
 import { Bytes, Null, StorageKey, Text, bool, u32, u64 } from '@polkadot/types/primitive';
 import { Metadata } from '@polkadot/types';
 import { ExtrinsicOrHash, ExtrinsicStatus } from '@polkadot/types/interfaces/author';
@@ -17,7 +17,7 @@ import { StorageKind } from '@polkadot/types/interfaces/offchain';
 import { RuntimeDispatchInfo } from '@polkadot/types/interfaces/payment';
 import { RpcMethods } from '@polkadot/types/interfaces/rpc';
 import { AccountId, BlockNumber, H256, Hash, Header, Index, Justification, SignedBlock, StorageData } from '@polkadot/types/interfaces/runtime';
-import { RuntimeVersion } from '@polkadot/types/interfaces/state';
+import { PairResult, RuntimeVersion } from '@polkadot/types/interfaces/state';
 import { ChainProperties, ChainType, Health, NetworkState, NodeRole, PeerInfo } from '@polkadot/types/interfaces/system';
 import { Observable } from 'rxjs';
 
@@ -199,7 +199,7 @@ declare module '@polkadot/rpc-core/types.jsonrpc' {
       /**
        * Returns the keys with prefix, leave empty to get all the keys
        **/
-      getPairs: AugmentedRpc<(prefix: StorageKey | string | Uint8Array | any, at?: BlockHash | string | Uint8Array) => Observable<Vec<(StorageKey,Raw)>>>;
+      getPairs: AugmentedRpc<(prefix: StorageKey | string | Uint8Array | any, at?: BlockHash | string | Uint8Array) => Observable<Vec<PairResult>>>;
       /**
        * Get the runtime version
        **/

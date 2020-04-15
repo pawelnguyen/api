@@ -57,7 +57,7 @@ export default {
           isOptional: true
         }
       ],
-      type: 'Vec<(StorageKey,Raw)>'
+      type: 'Vec<PairResult>'
     },
     getKeysPaged: {
       alias: ['state_getKeysPagedAt'],
@@ -327,6 +327,7 @@ export default {
   types: {
     ApiId: '[u8; 8]',
     KeyValueOption: '(StorageKey, Option<StorageData>)',
+    PairResult: '(StorageKey, Raw)',
     RuntimeVersionApi: '(ApiId, u32)',
     RuntimeVersion: {
       specName: 'Text',

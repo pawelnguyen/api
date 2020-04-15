@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 import { ITuple } from '@polkadot/types/types';
-import { Option, Struct, U8aFixed, Vec } from '@polkadot/types/codec';
+import { Option, Raw, Struct, U8aFixed, Vec } from '@polkadot/types/codec';
 import { StorageKey, Text, u32 } from '@polkadot/types/primitive';
 import { Hash, StorageData } from '@polkadot/types/interfaces/runtime';
 
@@ -11,6 +11,9 @@ export interface ApiId extends U8aFixed {}
 
 /** @name KeyValueOption */
 export interface KeyValueOption extends ITuple<[StorageKey, Option<StorageData>]> {}
+
+/** @name PairResult */
+export interface PairResult extends ITuple<[StorageKey, Raw]> {}
 
 /** @name RuntimeVersion */
 export interface RuntimeVersion extends Struct {

@@ -347,7 +347,7 @@ export default class Rpc implements RpcInterface {
       return method === 'queryStorageAt'
         ? mapped[0][1]
         : mapped;
-    } else if (rpc.type === 'Vec<(StorageKey,Raw)>') {
+    } else if (rpc.type === 'Vec<PairResult>') {
       const key = params[0] as StorageKey;
 
       return result.map(([keyHex, valueHex]: [string, string]) => [
