@@ -57,7 +57,7 @@ export default {
           isOptional: true
         }
       ],
-      type: 'Vec<KeyValue>'
+      type: 'Vec<(StorageKey,Raw)>'
     },
     getKeysPaged: {
       alias: ['state_getKeysPagedAt'],

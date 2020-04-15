@@ -261,4 +261,11 @@ export default class StorageKey extends Bytes {
 
     return this;
   }
+
+  /**
+   * The raw type name for this instance
+   */
+  public toRawType (): string {
+    return 'StorageKey';
+  }
 }

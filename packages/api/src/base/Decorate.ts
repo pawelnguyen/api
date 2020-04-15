@@ -536,7 +536,10 @@ export default abstract class Decorate<ApiType extends ApiTypes> extends Events 
   // }
 
   private _retrieveMapPairs (entry: StorageEntry, arg?: Arg): Observable<[StorageKey, Codec][]> {
-    const headKey = this._getHeadKey(entry, arg);
+    const headHex = this._getHeadKey(entry, arg);
+    const headKey = this.createType('StorageKey', headHex);
+
+    headKey.setMeta(entry.meta);
 
     return this._rpcCore.state.getPairs(headKey).pipe(
       map((all): [StorageKey, Codec][] =>

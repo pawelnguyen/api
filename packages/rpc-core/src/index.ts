@@ -11,8 +11,7 @@ import memoizee from 'memoizee';
 import { combineLatest, from, Observable, Observer, of, throwError } from 'rxjs';
 import { catchError, map, publishReplay, refCount, switchMap } from 'rxjs/operators';
 import jsonrpc from '@polkadot/types/interfaces/jsonrpc';
-import { Option, Vec, createClass, createTypeUnsafe } from '@polkadot/types';
-import StorageKey, { unwrapStorageType } from '@polkadot/types/primitive/StorageKey';
+import { Option, StorageKey, Vec, createClass, createTypeUnsafe } from '@polkadot/types';
 import { assert, hexToU8a, isFunction, isNull, isNumber, isUndefined, logger, u8aToU8a } from '@polkadot/util';
 
 import { drr } from './rxjs';
@@ -348,14 +347,13 @@ export default class Rpc implements RpcInterface {
       return method === 'queryStorageAt'
         ? mapped[0][1]
         : mapped;
-    } else if (rpc.type === 'Vec<KeyValue>') {
+    } else if (rpc.type === 'Vec<(StorageKey,Raw)>') {
       const key = params[0] as StorageKey;
 
-      if (key.meta) {
-        const outputType = unwrapStorageType(key.meta.type, key.meta.modifier.isOptional);
-
-        return createTypeUnsafe(this.registry, `Vec<(StorageKey, ${outputType})>`, [result]);
-      }
+      return result.map(([keyHex, valueHex]: [string, string]) => [
+        createTypeUnsafe(this.registry, 'StorageKey', [keyHex]),
+        this._formatStorageData(key, valueHex)
+      ]);
     }
 
     return createTypeUnsafe(this.registry, rpc.type, [result]);
