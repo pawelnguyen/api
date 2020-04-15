@@ -275,7 +275,7 @@ ___
 ### getPairs(prefix: `StorageKey`, at?: `BlockHash`): `Vec<KeyValue>`
 - **interface**: `api.rpc.state.getPairs`
 - **jsonrpc**: `state_getPairs`
-- **summary**: Returns the keys with prefix, leave empty to get all the keys
+- **summary**: Returns the keys with prefix, leave empty to get all the keys (deprecated: Use getKeysPaged)
  
 ### getRuntimeVersion(at?: `BlockHash`): `RuntimeVersion`
 - **interface**: `api.rpc.state.getRuntimeVersion`
