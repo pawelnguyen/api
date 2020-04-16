@@ -342,6 +342,16 @@ ___
 - **jsonrpc**: `system_health`
 - **summary**: Return health status of the node
  
+### localListenAddresses(): `Vec<Text>`
+- **interface**: `api.rpc.system.localListenAddresses`
+- **jsonrpc**: `system_localListenAddresses`
+- **summary**: The addresses include a trailing /p2p/ with the local PeerId, and are thus suitable to be passed to addReservedPeer or as a bootnode address for example
+ 
+### localPeerId(): `Text`
+- **interface**: `api.rpc.system.localPeerId`
+- **jsonrpc**: `system_localPeerId`
+- **summary**: Returns the base58-encoded PeerId of the node
+ 
 ### name(): `Text`
 - **interface**: `api.rpc.system.name`
 - **jsonrpc**: `system_name`
