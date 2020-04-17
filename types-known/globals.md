@@ -12,3 +12,4 @@
 * ["spec/kusama"](modules/_spec_kusama_.md)
 * ["spec/polkadot"](modules/_spec_polkadot_.md)
 * ["spec/westend"](modules/_spec_westend_.md)
+* ["warnings"](modules/_warnings_.md)
