@@ -6,6 +6,7 @@
 
 ### Modules
 
+* ["accounts/flags"](modules/_accounts_flags_.md)
 * ["accounts/idAndIndex"](modules/_accounts_idandindex_.md)
 * ["accounts/idToIndex"](modules/_accounts_idtoindex_.md)
 * ["accounts/indexToId"](modules/_accounts_indextoid_.md)
