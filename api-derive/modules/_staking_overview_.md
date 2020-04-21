@@ -14,7 +14,7 @@
 
 ▸ **overview**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/staking/overview.ts:16](https://github.com/polkadot-js/api/blob/b18bdc37f9/packages/api-derive/src/staking/overview.ts#L16)*
+*Defined in [packages/api-derive/src/staking/overview.ts:16](https://github.com/polkadot-js/api/blob/33165e93dc/packages/api-derive/src/staking/overview.ts#L16)*
 
 **`description`** Retrieve the staking overview, including elected and points earned
 

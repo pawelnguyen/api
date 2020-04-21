@@ -277,6 +277,11 @@ ___
 - **jsonrpc**: `state_getPairs`
 - **summary**: Returns the keys with prefix, leave empty to get all the keys (deprecated: Use getKeysPaged)
  
+### getReadProof(keys: `Vec<StorageKey>`, at?: `BlockHash`): `ReadProof`
+- **interface**: `api.rpc.state.getReadProof`
+- **jsonrpc**: `state_getReadProof`
+- **summary**: Returns proof of storage entries at a specific block state
+ 
 ### getRuntimeVersion(at?: `BlockHash`): `RuntimeVersion`
 - **interface**: `api.rpc.state.getRuntimeVersion`
 - **jsonrpc**: `state_getRuntimeVersion`
