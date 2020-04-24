@@ -14,7 +14,7 @@
 
 ▸ **signingInfo**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/tx/signingInfo.ts:47](https://github.com/polkadot-js/api/blob/5a929d3810/packages/api-derive/src/tx/signingInfo.ts#L47)*
+*Defined in [packages/api-derive/src/tx/signingInfo.ts:47](https://github.com/polkadot-js/api/blob/11e7b90918/packages/api-derive/src/tx/signingInfo.ts#L47)*
 
 **Parameters:**
 
