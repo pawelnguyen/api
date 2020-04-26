@@ -317,7 +317,7 @@ ___
 - **jsonrpc**: `state_subscribeRuntimeVersion`
 - **summary**: Retrieves the runtime version via subscription
  
-### subscribeStorage(keys: `Vec<StorageKey>`): `StorageChangeSet`
+### subscribeStorage(keys?: `Vec<StorageKey>`): `StorageChangeSet`
 - **interface**: `api.rpc.state.subscribeStorage`
 - **jsonrpc**: `state_subscribeStorage`
 - **summary**: Subscribes to storage changes for the provided keys
