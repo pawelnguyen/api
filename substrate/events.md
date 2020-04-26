@@ -391,6 +391,9 @@ ___
 
   NOTE: This event is only emitted when funds are bonded via a dispatchable. Notably, it will not be emitted for staking rewards when they are added to stake. 
  
+### EraPayout(`EraIndex`, `Balance`, `Balance`)
+- **summary**:   The era payout has been set; the first balance is the validator-payout; the second is the remainder from the maximum amount of reward. 
+ 
 ### OldSlashingReportDiscarded(`SessionIndex`)
 - **summary**:   An old slashing report from a prior era was discarded because it could not be processed. 
  

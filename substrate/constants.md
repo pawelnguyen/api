@@ -16,9 +16,13 @@ The following sections contain the module constants, also known as parameter typ
 
 - **[finalityTracker](#finalitytracker)**
 
+- **[identity](#identity)**
+
 - **[society](#society)**
 
 - **[staking](#staking)**
+
+- **[system](#system)**
 
 - **[timestamp](#timestamp)**
 
@@ -56,22 +60,6 @@ ___
 
 ## contracts
  
-### blockGasLimit: `Gas`
-- **interface**: `api.consts.contracts.blockGasLimit`
-- **summary**:   The maximum amount of gas that could be expended per block. A reasonable default value is 10_000_000. 
- 
-### callBaseFee: `Gas`
-- **interface**: `api.consts.contracts.callBaseFee`
-- **summary**:   The base fee charged for calling into a contract. A reasonable default value is 135. 
- 
-### contractFee: `BalanceOf<T>`
-- **interface**: `api.consts.contracts.contractFee`
-- **summary**:   The fee required to instantiate a contract instance. A reasonable default value is 21. 
- 
-### instantiateBaseFee: `Gas`
-- **interface**: `api.consts.contracts.instantiateBaseFee`
-- **summary**:   The base fee charged for instantiating a contract. A reasonable default value is 175. 
- 
 ### maxDepth: `u32`
 - **interface**: `api.consts.contracts.maxDepth`
 - **summary**:   The maximum nesting level of a call/instantiate stack. A reasonable default value is 100. 
@@ -107,14 +95,6 @@ ___
 ### tombstoneDeposit: `BalanceOf<T>`
 - **interface**: `api.consts.contracts.tombstoneDeposit`
 - **summary**:   The minimum amount required to generate a tombstone. 
- 
-### transactionBaseFee: `BalanceOf<T>`
-- **interface**: `api.consts.contracts.transactionBaseFee`
-- **summary**:   The fee to be paid for making a transaction; the base. 
- 
-### transactionByteFee: `BalanceOf<T>`
-- **interface**: `api.consts.contracts.transactionByteFee`
-- **summary**:   The fee to be paid for making a transaction; the per-byte portion. 
 
 ___
 
@@ -165,6 +145,9 @@ ___
 ### desiredRunnersUp: `u32`
 - **interface**: `api.consts.elections.desiredRunnersUp`
  
+### moduleId: `LockIdentifier`
+- **interface**: `api.consts.elections.moduleId`
+ 
 ### termDuration: `T::BlockNumber`
 - **interface**: `api.consts.elections.termDuration`
  
@@ -187,6 +170,35 @@ ___
 ___
 
 
+## identity
+ 
+### basicDeposit: `BalanceOf<T>`
+- **interface**: `api.consts.identity.basicDeposit`
+- **summary**:   The amount held on deposit for a registered identity. 
+ 
+### fieldDeposit: `BalanceOf<T>`
+- **interface**: `api.consts.identity.fieldDeposit`
+- **summary**:   The amount held on deposit per additional field for a registered identity. 
+ 
+### maxAdditionalFields: `u32`
+- **interface**: `api.consts.identity.maxAdditionalFields`
+- **summary**:   Maximum number of additional fields that may be stored in an ID. Needed to bound the I/O required to access an identity, but can be pretty high. 
+ 
+### maxRegistrars: `u32`
+- **interface**: `api.consts.identity.maxRegistrars`
+- **summary**:   Maxmimum number of registrars allowed in the system. Needed to bound the complexity of, e.g., updating judgements. 
+ 
+### maxSubAccounts: `u32`
+- **interface**: `api.consts.identity.maxSubAccounts`
+- **summary**:   The maximum number of sub-accounts allowed per identified account. 
+ 
+### subAccountDeposit: `BalanceOf<T>`
+- **interface**: `api.consts.identity.subAccountDeposit`
+- **summary**:   The amount held on deposit for a registered subaccount. This should account for the fact that one storage item's value will increase by the size of an account ID, and there will be another trie item whose value is the size of an account ID plus 32 bytes. 
+
+___
+
+
 ## society
  
 ### candidateDeposit: `BalanceOf<T, I>`
@@ -200,6 +212,10 @@ ___
 ### maxStrikes: `u32`
 - **interface**: `api.consts.society.maxStrikes`
 - **summary**:   The number of times a member may vote the wrong way (or not at all, when they are a skeptic) before they become suspended. 
+ 
+### moduleId: `ModuleId`
+- **interface**: `api.consts.society.moduleId`
+- **summary**:   The societies's module id 
  
 ### periodSpend: `BalanceOf<T, I>`
 - **interface**: `api.consts.society.periodSpend`
@@ -229,6 +245,31 @@ ___
 ___
 
 
+## system
+ 
+### blockExecutionWeight: `Weight`
+- **interface**: `api.consts.system.blockExecutionWeight`
+- **summary**:   The base weight of executing a block, independent of the transactions in the block. 
+ 
+### dbWeight: `RuntimeDbWeight`
+- **interface**: `api.consts.system.dbWeight`
+- **summary**:   The weight of runtime database operations the runtime can invoke. 
+ 
+### extrinsicBaseWeight: `Weight`
+- **interface**: `api.consts.system.extrinsicBaseWeight`
+- **summary**:   The base weight of an Extrinsic in the block, independent of the of extrinsic being executed. 
+ 
+### maximumBlockLength: `u32`
+- **interface**: `api.consts.system.maximumBlockLength`
+- **summary**:   The maximum length of a block (in bytes). 
+ 
+### maximumBlockWeight: `Weight`
+- **interface**: `api.consts.system.maximumBlockWeight`
+- **summary**:   The maximum weight of a block. 
+
+___
+
+
 ## timestamp
  
 ### minimumPeriod: `T::Moment`
@@ -239,10 +280,6 @@ ___
 
 
 ## transactionPayment
- 
-### transactionBaseFee: `BalanceOf<T>`
-- **interface**: `api.consts.transactionPayment.transactionBaseFee`
-- **summary**:   The fee to be paid for making a transaction; the base. 
  
 ### transactionByteFee: `BalanceOf<T>`
 - **interface**: `api.consts.transactionPayment.transactionByteFee`
@@ -256,6 +293,10 @@ ___
 ### burn: `Permill`
 - **interface**: `api.consts.treasury.burn`
 - **summary**:   Percentage of spare funds (if any) that are burnt per spend period. 
+ 
+### moduleId: `ModuleId`
+- **interface**: `api.consts.treasury.moduleId`
+- **summary**:   The treasury's module id, used for deriving its sovereign account ID. 
  
 ### proposalBond: `Permill`
 - **interface**: `api.consts.treasury.proposalBond`

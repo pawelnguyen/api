@@ -67,7 +67,13 @@ ___
  
 ### forceTransfer(source: `<T::Lookup as StaticLookup>::Source`, dest: `<T::Lookup as StaticLookup>::Source`, value: `Compact<T::Balance>`)
 - **interface**: `api.tx.balances.forceTransfer`
-- **summary**:   Exactly as `transfer`, except the origin must be root and the source account may be specified. 
+- **summary**:   Exactly as `transfer`, except the origin must be root and the source account may be specified. \# \<weight>
+
+   
+
+  - Same as transfer, but additional read and write because the source account is  not assumed to be in the overlay. 
+
+  \# \</weight> 
  
 ### setBalance(who: `<T::Lookup as StaticLookup>::Source`, new_free: `Compact<T::Balance>`, new_reserved: `Compact<T::Balance>`)
 - **interface**: `api.tx.balances.setBalance`
@@ -160,7 +166,7 @@ ___
 
   - The contract is initialized.
  
-### putCode(gas_limit: `Compact<Gas>`, code: `Vec<u8>`)
+### putCode(code: `Vec<u8>`)
 - **interface**: `api.tx.contracts.putCode`
 - **summary**:   Stores the given binary Wasm code into the chain's storage and returns its `codehash`. You can instantiate contracts only with stored code. 
  
@@ -944,11 +950,17 @@ ___
 
    
 
-  - `O(R)` where `R` registrar-count (governance-bounded).
+  - `O(R)` where `R` registrar-count (governance-bounded and code-bounded).
 
   - One storage mutation (codec `O(R)`).
 
   - One event.
+
+  - Benchmarks:
+
+    - 78.71 + R * 0.965 µs (min squares analysis)
+
+    - 94.28 + R * 0.991 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -976,11 +988,17 @@ ___
 
   - One event.
 
+  - Benchmarks:
+
+    - 135.3 + R * 0.574 + X * 3.394 µs (min squares analysis)
+
+    - 144.3 + R * 0.316 + X * 3.53 µs (min squares analysis)
+
   \# \</weight> 
  
 ### clearIdentity()
 - **interface**: `api.tx.identity.clearIdentity`
-- **summary**:   Clear an account's identity info and all sub-account and return all deposits. 
+- **summary**:   Clear an account's identity info and all sub-accounts and return all deposits. 
 
   Payment: All reserved balances on the account are returned. 
 
@@ -992,13 +1010,25 @@ ___
 
    
 
-  - `O(R + S + X)`.
+  - `O(R + S + X)`
 
-  - One balance-reserve operation.
+    - where `R` registrar-count (governance-bounded).
 
-  - `S + 2` storage deletions.
+    - where `S` subs-count (hard- and deposit-bounded).
+
+    - where `X` additional-field-count (deposit-bounded and code-bounded).
+
+  - One balance-unreserve operation.
+
+  - `2` storage reads and `S + 2` storage deletions.
 
   - One event.
+
+  - Benchmarks:
+
+    - 152.3 + R * 0.306 + S * 4.967 + X * 1.697 µs (min squares analysis)
+
+    - 139.5 + R * 0.466 + S * 5.304 + X * 1.895 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1025,6 +1055,8 @@ ___
   - `S + 2` storage mutations.
 
   - One event.
+
+  - Benchmark: 167.4 + R * 1.107 + S * 5.343 + X * 2.294 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1056,6 +1088,8 @@ ___
 
   - One event.
 
+  - Benchmark: 110.7 + R * 1.066 + X * 3.402 µs (min squares analysis)
+
   \# \</weight> 
  
 ### requestJudgement(reg_index: `Compact<RegistrarIndex>`, max_fee: `Compact<BalanceOf<T>>`)
@@ -1070,7 +1104,7 @@ ___
 
   - `max_fee`: The maximum fee that may be paid. This should just be auto-populated as:
 
-  ```nocompile Self::registrars(reg_index).unwrap().fee ``` 
+  ```nocompile Self::registrars().get(reg_index).unwrap().fee ``` 
 
   Emits `JudgementRequested` if successful. 
 
@@ -1085,6 +1119,12 @@ ___
   - Storage: 1 read `O(R)`, 1 mutate `O(X + R)`.
 
   - One event.
+
+  - Benchmarks:
+
+    - 154 + R * 0.932 + X * 3.302 µs (min squares analysis)
+
+    - 172.9 + R * 0.69 + X * 3.304 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1106,6 +1146,8 @@ ___
 
   - One storage mutation `O(R)`.
 
+  - Benchmark: 24.59 + R * 0.832 µs (min squares analysis)
+
   \# \</weight> 
  
 ### setFee(index: `Compact<RegistrarIndex>`, fee: `Compact<BalanceOf<T>>`)
@@ -1125,6 +1167,10 @@ ___
   - `O(R)`.
 
   - One storage mutation `O(R)`.
+
+  - Benchmarks:
+
+    - 23.81 + R * 0.774 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1146,6 +1192,8 @@ ___
 
   - One storage mutation `O(R)`.
 
+  - Benchmark: 22.85 + R * 0.853 µs (min squares analysis)
+
   \# \</weight> 
  
 ### setIdentity(info: `IdentityInfo`)
@@ -1154,7 +1202,7 @@ ___
 
   If the account already has identity information, the deposit is taken as part payment for the new deposit. 
 
-  The dispatch origin for this call must be _Signed_ and the sender must have a registered identity. 
+  The dispatch origin for this call must be _Signed_. 
 
   - `info`: The identity information. 
 
@@ -1164,13 +1212,23 @@ ___
 
    
 
-  - `O(X + X' + R)` where `X` additional-field-count (deposit-bounded and code-bounded).
+  - `O(X + X' + R)`
 
-  - At most two balance operations.
+    - where `X` additional-field-count (deposit-bounded and code-bounded)
+
+    - where `R` judgements-count (registrar-count-bounded)
+
+  - One balance reserve operation.
 
   - One storage mutation (codec-read `O(X' + R)`, codec-write `O(X + R)`).
 
   - One event.
+
+  - Benchmarks:
+
+    - 136.6 + R * 0.62 + X * 2.62 µs (min squares analysis)
+
+    - 146.2 + R * 0.372 + X * 2.98 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1182,17 +1240,35 @@ ___
 
   The dispatch origin for this call must be _Signed_ and the sender must have a registered identity. 
 
-  - `subs`: The identity's sub-accounts. 
+  - `subs`: The identity's (new) sub-accounts. 
 
   \# \<weight>
 
    
 
-  - `O(S)` where `S` subs-count (hard- and deposit-bounded).
+  - `O(P + S)`
 
-  - At most two balance operations.
+    - where `P` old-subs-count (hard- and deposit-bounded).
 
-  - At most O(2 * S + 1) storage mutations; codec complexity `O(1 * S + S * 1)`);  one storage-exists. 
+    - where `S` subs-count (hard- and deposit-bounded).
+
+  - At most one balance operations.
+
+  - DB:
+
+    - `P + S` storage mutations (codec complexity `O(1)`)
+
+    - One storage read (codec complexity `O(P)`).
+
+    - One storage write (codec complexity `O(S)`).
+
+    - One storage-exists (`IdentityOf::contains_key`).
+
+  - Benchmarks:
+
+    - 115.2 + P * 5.11 + S * 6.67 µs (min squares analysis)
+
+    - 121 + P * 4.852 + S * 7.111 µs (min squares analysis)
 
   \# \</weight> 
 
@@ -1577,11 +1653,13 @@ ___
 
    
 
-  - O(N) in number of key types.
+  - Complexity: `O(1)` in number of key types.  Actual cost depends on the number of length of `T::Keys::key_ids()` which is fixed. 
 
-  - Removes N + 1 DB entries.
+  - DbReads: `T::ValidatorIdOf`, `NextKeys`, `origin account`
 
-  - Reduces system account refs by one on success.
+  - DbWrites: `NextKeys`, `origin account`
+
+  - DbWrites per key id: `KeyOwnder`
 
   \# \</weight> 
  
@@ -1595,11 +1673,15 @@ ___
 
    
 
-  - O(log n) in number of accounts.
+  - Complexity: `O(1)`  Actual cost depends on the number of length of `T::Keys::key_ids()` which is fixed. 
 
-  - One extra DB entry.
+  - DbReads: `origin account`, `T::ValidatorIdOf`, `NextKeys`
 
-  - Increases system account refs by one on success iff there were previously no keys set.  In this case, purge_keys will need to be called before the account can be removed. 
+  - DbWrites: `origin account`, `NextKeys`
+
+  - DbReads per key id: `KeyOwner`
+
+  - DbWrites per key id: `KeyOwner`
 
   \# \</weight> 
 
@@ -2391,7 +2473,7 @@ ___
 
   - Storage: O(e) accountid reads from `Nomination` to read correct nominations. 
 
-  - Storage: O(e) calls into `slashable_balance_of_extended` to convert ratio to staked.
+  - Storage: O(e) calls into `slashable_balance_of_vote_weight` to convert ratio to staked.
 
   - Memory: build_support_map. O(e). 
 
@@ -2556,38 +2638,138 @@ ___
 ### killPrefix(prefix: `Key`)
 - **interface**: `api.tx.system.killPrefix`
 - **summary**:   Kill all storage items with a key that starts with the given prefix. 
+
+  \# \<weight>
+
+   
+
+  - `O(P)` where `P` amount of keys with prefix `prefix`
+
+  - `P` storage deletions.
+
+  \# \</weight> 
  
 ### killStorage(keys: `Vec<Key>`)
 - **interface**: `api.tx.system.killStorage`
 - **summary**:   Kill some items from storage. 
+
+  \# \<weight>
+
+   
+
+  - `O(VK)` where `V` length of `keys` and `K` length of one key
+
+  - `V` storage deletions.
+
+  \# \</weight> 
  
 ### remark(_remark: `Vec<u8>`)
 - **interface**: `api.tx.system.remark`
 - **summary**:   Make some on-chain remark. 
+
+  \# \<weight>
+
+   
+
+  - `O(1)`
+
+  \# \</weight> 
  
 ### setChangesTrieConfig(changes_trie_config: `Option<ChangesTrieConfiguration>`)
 - **interface**: `api.tx.system.setChangesTrieConfig`
 - **summary**:   Set the new changes trie configuration. 
+
+  \# \<weight>
+
+   
+
+  - `O(D)` where `D` length of `Digest`
+
+  - 1 storage write or delete (codec `O(1)`).
+
+  - 1 call to `deposit_log`: `O(D)` (which depends on the length of `Digest`)
+
+  \# \</weight> 
  
 ### setCode(code: `Vec<u8>`)
 - **interface**: `api.tx.system.setCode`
 - **summary**:   Set the new runtime code. 
+
+  \# \<weight>
+
+   
+
+  - `O(C + S)` where `C` length of `code` and `S` complexity of `can_set_code`
+
+  - 1 storage write (codec `O(C)`).
+
+  - 1 call to `can_set_code`: `O(S)` (calls `sp_io::misc::runtime_version` which is expensive).
+
+  - 1 event.
+
+  \# \</weight> 
  
 ### setCodeWithoutChecks(code: `Vec<u8>`)
 - **interface**: `api.tx.system.setCodeWithoutChecks`
 - **summary**:   Set the new runtime code without doing any checks of the given `code`. 
+
+  \# \<weight>
+
+   
+
+  - `O(C)` where `C` length of `code`
+
+  - 1 storage write (codec `O(C)`).
+
+  - 1 event.
+
+  \# \</weight> 
  
 ### setHeapPages(pages: `u64`)
 - **interface**: `api.tx.system.setHeapPages`
 - **summary**:   Set the number of pages in the WebAssembly environment's heap. 
+
+  \# \<weight>
+
+   
+
+  - `O(1)`
+
+  - 1 storage write.
+
+  \# \</weight> 
  
 ### setStorage(items: `Vec<KeyValue>`)
 - **interface**: `api.tx.system.setStorage`
 - **summary**:   Set some items of storage. 
+
+  \# \<weight>
+
+   
+
+  - `O(I)` where `I` length of `items`
+
+  - `I` storage writes (`O(1)`).
+
+  \# \</weight> 
  
 ### suicide()
 - **interface**: `api.tx.system.suicide`
 - **summary**:   Kill the sending account, assuming there are no references outstanding and the composite data is equal to its default value. 
+
+  \# \<weight>
+
+   
+
+  - `O(K)` with `K` being complexity of `on_killed_account`
+
+  - 1 storage read and deletion.
+
+  - 1 call to `on_killed_account` callback with unknown complexity `K`
+
+  - 1 event.
+
+  \# \</weight> 
 
 ___
 
@@ -2715,6 +2897,18 @@ ___
   The timestamp should be greater than the previous one by the amount specified by `MinimumPeriod`. 
 
   The dispatch origin for this call must be `Inherent`. 
+
+  \# \<weight>
+
+   
+
+  - `O(T)` where `T` complexity of `on_timestamp_set`
+
+  - 2 storage mutations (codec `O(1)`).
+
+  - 1 event handler `on_timestamp_set` `O(T)`.
+
+  \# \</weight> 
 
 ___
 

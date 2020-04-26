@@ -378,6 +378,9 @@ ___
 ### TooManyFields
 - **summary**:   Too many additional fields. 
  
+### TooManyRegistrars
+- **summary**:   Maximum amount of registrars reached. Cannot add any more. 
+ 
 ### TooManySubAccounts
 - **summary**:   Too many subs-accounts. 
 

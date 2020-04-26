@@ -14,7 +14,7 @@
 
 ▸ **getTypeDef**(`_type`: string, `__namedParameters`: object): *TypeDef*
 
-*Defined in [packages/types/src/create/getTypeDef.ts:171](https://github.com/polkadot-js/api/blob/932122cd21/packages/types/src/create/getTypeDef.ts#L171)*
+*Defined in [packages/types/src/create/getTypeDef.ts:171](https://github.com/polkadot-js/api/blob/e0119c1873/packages/types/src/create/getTypeDef.ts#L171)*
 
 **Parameters:**
 

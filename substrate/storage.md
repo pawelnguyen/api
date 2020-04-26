@@ -180,14 +180,6 @@ ___
 - **interface**: `api.query.contracts.currentSchedule`
 - **summary**:   Current cost schedule for contracts. 
  
-### gasPrice(): `BalanceOf`
-- **interface**: `api.query.contracts.gasPrice`
-- **summary**:   The price of one unit of gas. 
- 
-### gasSpent(): `Gas`
-- **interface**: `api.query.contracts.gasSpent`
-- **summary**:   Gas spent so far in this block. 
- 
 ### pristineCode(`CodeHash`): `Option<Bytes>`
 - **interface**: `api.query.contracts.pristineCode`
 - **summary**:   A mapping from an original code hash to the original code, untouched by instrumentation. 
