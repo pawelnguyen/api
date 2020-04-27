@@ -1,6 +1,10 @@
 [Polkadot JS API](../README.md) › [Globals](../globals.md) › ["promise/Combinator"](../modules/_promise_combinator_.md) › [Combinator](_promise_combinator_.combinator.md)
 
-# Class: Combinator
+# Class: Combinator <**T**>
+
+## Type parameters
+
+▪ **T**: *any[]*
 
 ## Hierarchy
 
@@ -20,16 +24,16 @@
 
 ###  constructor
 
-\+ **new Combinator**(`fns`: [CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md) | [[CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md), any][], `callback`: [CombinatorCallback](../modules/_promise_combinator_.md#combinatorcallback)): *[Combinator](_promise_combinator_.combinator.md)*
+\+ **new Combinator**(`fns`: [CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md) | [[CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md), any][], `callback`: [CombinatorCallback](../modules/_promise_combinator_.md#combinatorcallback)‹T›): *[Combinator](_promise_combinator_.combinator.md)*
 
-*Defined in [api/src/promise/Combinator.ts:28](https://github.com/polkadot-js/api/blob/e3d3a1ff71/packages/api/src/promise/Combinator.ts#L28)*
+*Defined in [api/src/promise/Combinator.ts:29](https://github.com/polkadot-js/api/blob/0d1d42f6c2/packages/api/src/promise/Combinator.ts#L29)*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
 `fns` | [CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md) &#124; [[CombinatorFunction](../interfaces/_promise_combinator_.combinatorfunction.md), any][] |
-`callback` | [CombinatorCallback](../modules/_promise_combinator_.md#combinatorcallback) |
+`callback` | [CombinatorCallback](../modules/_promise_combinator_.md#combinatorcallback)‹T› |
 
 **Returns:** *[Combinator](_promise_combinator_.combinator.md)*
 
@@ -39,6 +43,6 @@ Name | Type |
 
 ▸ **unsubscribe**(): *void*
 
-*Defined in [api/src/promise/Combinator.ts:76](https://github.com/polkadot-js/api/blob/e3d3a1ff71/packages/api/src/promise/Combinator.ts#L76)*
+*Defined in [api/src/promise/Combinator.ts:77](https://github.com/polkadot-js/api/blob/0d1d42f6c2/packages/api/src/promise/Combinator.ts#L77)*
 
 **Returns:** *void*
