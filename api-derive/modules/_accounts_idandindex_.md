@@ -14,7 +14,7 @@
 
 ▸ **idAndIndex**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/accounts/idAndIndex.ts:54](https://github.com/polkadot-js/api/blob/e0119c1873/packages/api-derive/src/accounts/idAndIndex.ts#L54)*
+*Defined in [packages/api-derive/src/accounts/idAndIndex.ts:54](https://github.com/polkadot-js/api/blob/e3d3a1ff71/packages/api-derive/src/accounts/idAndIndex.ts#L54)*
 
 **`name`** idAndIndex
 
