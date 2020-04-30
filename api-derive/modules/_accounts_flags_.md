@@ -14,7 +14,7 @@
 
 ▸ **flags**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/accounts/flags.ts:34](https://github.com/polkadot-js/api/blob/05a834b822/packages/api-derive/src/accounts/flags.ts#L34)*
+*Defined in [packages/api-derive/src/accounts/flags.ts:34](https://github.com/polkadot-js/api/blob/844d1a2928/packages/api-derive/src/accounts/flags.ts#L34)*
 
 **`name`** info
 
