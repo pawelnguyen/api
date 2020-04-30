@@ -18,11 +18,11 @@ composes it and populates the `.query`, `.tx` and `.consts` sections.
 
 ### Properties
 
-* [consts](_decorated_decorated_.decorated.md#consts)
-* [metadata](_decorated_decorated_.decorated.md#metadata)
-* [query](_decorated_decorated_.decorated.md#query)
-* [registry](_decorated_decorated_.decorated.md#registry)
-* [tx](_decorated_decorated_.decorated.md#tx)
+* [consts](_decorated_decorated_.decorated.md#readonly-consts)
+* [metadata](_decorated_decorated_.decorated.md#readonly-metadata)
+* [query](_decorated_decorated_.decorated.md#readonly-query)
+* [registry](_decorated_decorated_.decorated.md#readonly-registry)
+* [tx](_decorated_decorated_.decorated.md#readonly-tx)
 
 ## Constructors
 
@@ -30,7 +30,7 @@ composes it and populates the `.query`, `.tx` and `.consts` sections.
 
 \+ **new Decorated**(`registry`: Registry, `value?`: Uint8Array | string | [Metadata](_metadata_metadata_.metadata.md)): *[Decorated](_decorated_decorated_.decorated.md)*
 
-*Defined in [packages/metadata/src/Decorated/Decorated.ts:27](https://github.com/polkadot-js/api/blob/3665690444/packages/metadata/src/Decorated/Decorated.ts#L27)*
+*Defined in [packages/metadata/src/Decorated/Decorated.ts:27](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/metadata/src/Decorated/Decorated.ts#L27)*
 
 **Parameters:**
 
@@ -43,40 +43,40 @@ Name | Type |
 
 ## Properties
 
-###  consts
+### `Readonly` consts
 
 • **consts**: *Constants*
 
-*Defined in [packages/metadata/src/Decorated/Decorated.ts:19](https://github.com/polkadot-js/api/blob/3665690444/packages/metadata/src/Decorated/Decorated.ts#L19)*
+*Defined in [packages/metadata/src/Decorated/Decorated.ts:19](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/metadata/src/Decorated/Decorated.ts#L19)*
 
 ___
 
-###  metadata
+### `Readonly` metadata
 
 • **metadata**: *[Metadata](_metadata_metadata_.metadata.md)*
 
-*Defined in [packages/metadata/src/Decorated/Decorated.ts:21](https://github.com/polkadot-js/api/blob/3665690444/packages/metadata/src/Decorated/Decorated.ts#L21)*
+*Defined in [packages/metadata/src/Decorated/Decorated.ts:21](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/metadata/src/Decorated/Decorated.ts#L21)*
 
 ___
 
-###  query
+### `Readonly` query
 
 • **query**: *Storage*
 
-*Defined in [packages/metadata/src/Decorated/Decorated.ts:25](https://github.com/polkadot-js/api/blob/3665690444/packages/metadata/src/Decorated/Decorated.ts#L25)*
+*Defined in [packages/metadata/src/Decorated/Decorated.ts:25](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/metadata/src/Decorated/Decorated.ts#L25)*
 
 ___
 
-###  registry
+### `Readonly` registry
 
 • **registry**: *Registry*
 
-*Defined in [packages/metadata/src/Decorated/Decorated.ts:23](https://github.com/polkadot-js/api/blob/3665690444/packages/metadata/src/Decorated/Decorated.ts#L23)*
+*Defined in [packages/metadata/src/Decorated/Decorated.ts:23](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/metadata/src/Decorated/Decorated.ts#L23)*
 
 ___
 
-###  tx
+### `Readonly` tx
 
 • **tx**: *ModulesWithCalls*
 
-*Defined in [packages/metadata/src/Decorated/Decorated.ts:27](https://github.com/polkadot-js/api/blob/3665690444/packages/metadata/src/Decorated/Decorated.ts#L27)*
+*Defined in [packages/metadata/src/Decorated/Decorated.ts:27](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/metadata/src/Decorated/Decorated.ts#L27)*

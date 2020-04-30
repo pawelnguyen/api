@@ -10,57 +10,57 @@
 
 ### Properties
 
-* [apis](_types_interfaces_.iruntimeversion.md#apis)
-* [authoringVersion](_types_interfaces_.iruntimeversion.md#authoringversion)
-* [implName](_types_interfaces_.iruntimeversion.md#implname)
-* [implVersion](_types_interfaces_.iruntimeversion.md#implversion)
-* [specName](_types_interfaces_.iruntimeversion.md#specname)
-* [specVersion](_types_interfaces_.iruntimeversion.md#specversion)
+* [apis](_types_interfaces_.iruntimeversion.md#readonly-apis)
+* [authoringVersion](_types_interfaces_.iruntimeversion.md#readonly-authoringversion)
+* [implName](_types_interfaces_.iruntimeversion.md#readonly-implname)
+* [implVersion](_types_interfaces_.iruntimeversion.md#readonly-implversion)
+* [specName](_types_interfaces_.iruntimeversion.md#readonly-specname)
+* [specVersion](_types_interfaces_.iruntimeversion.md#readonly-specversion)
 
 ## Properties
 
-###  apis
+### `Readonly` apis
 
 • **apis**: *any[]*
 
-*Defined in [packages/types/src/types/interfaces.ts:38](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/interfaces.ts#L38)*
+*Defined in [packages/types/src/types/interfaces.ts:38](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/interfaces.ts#L38)*
 
 ___
 
-###  authoringVersion
+### `Readonly` authoringVersion
 
 • **authoringVersion**: *BN*
 
-*Defined in [packages/types/src/types/interfaces.ts:39](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/interfaces.ts#L39)*
+*Defined in [packages/types/src/types/interfaces.ts:39](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/interfaces.ts#L39)*
 
 ___
 
-###  implName
+### `Readonly` implName
 
 • **implName**: *[String](../classes/_primitive_text_.text.md#static-string)*
 
-*Defined in [packages/types/src/types/interfaces.ts:41](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/interfaces.ts#L41)*
+*Defined in [packages/types/src/types/interfaces.ts:41](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/interfaces.ts#L41)*
 
 ___
 
-###  implVersion
+### `Readonly` implVersion
 
 • **implVersion**: *BN*
 
-*Defined in [packages/types/src/types/interfaces.ts:42](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/interfaces.ts#L42)*
+*Defined in [packages/types/src/types/interfaces.ts:42](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/interfaces.ts#L42)*
 
 ___
 
-###  specName
+### `Readonly` specName
 
 • **specName**: *[String](../classes/_primitive_text_.text.md#static-string)*
 
-*Defined in [packages/types/src/types/interfaces.ts:44](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/interfaces.ts#L44)*
+*Defined in [packages/types/src/types/interfaces.ts:44](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/interfaces.ts#L44)*
 
 ___
 
-###  specVersion
+### `Readonly` specVersion
 
 • **specVersion**: *BN*
 
-*Defined in [packages/types/src/types/interfaces.ts:45](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/interfaces.ts#L45)*
+*Defined in [packages/types/src/types/interfaces.ts:45](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/interfaces.ts#L45)*

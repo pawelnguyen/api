@@ -20,11 +20,11 @@
 
 ### Properties
 
-* [abi](_promise_promisecontract_.promisecontract.md#abi)
-* [address](_promise_promisecontract_.promisecontract.md#address)
-* [api](_promise_promisecontract_.promisecontract.md#api)
-* [decorateMethod](_promise_promisecontract_.promisecontract.md#decoratemethod)
-* [registry](_promise_promisecontract_.promisecontract.md#registry)
+* [abi](_promise_promisecontract_.promisecontract.md#readonly-abi)
+* [address](_promise_promisecontract_.promisecontract.md#readonly-address)
+* [api](_promise_promisecontract_.promisecontract.md#readonly-api)
+* [decorateMethod](_promise_promisecontract_.promisecontract.md#readonly-decoratemethod)
+* [registry](_promise_promisecontract_.promisecontract.md#readonly-registry)
 
 ### Accessors
 
@@ -44,7 +44,7 @@
 
 *Overrides [Contract](_base_contract_.contract.md).[constructor](_base_contract_.contract.md#constructor)*
 
-*Defined in [promise/PromiseContract.ts:14](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/promise/PromiseContract.ts#L14)*
+*Defined in [promise/PromiseContract.ts:14](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/promise/PromiseContract.ts#L14)*
 
 **Parameters:**
 
@@ -58,53 +58,53 @@ Name | Type |
 
 ## Properties
 
-###  abi
+### `Readonly` abi
 
 • **abi**: *Abi*
 
-*Inherited from [Base](_base_util_.base.md).[abi](_base_util_.base.md#abi)*
+*Inherited from [Base](_base_util_.base.md).[abi](_base_util_.base.md#readonly-abi)*
 
-*Defined in [base/util.ts:14](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/base/util.ts#L14)*
+*Defined in [base/util.ts:14](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/base/util.ts#L14)*
 
 ___
 
-###  address
+### `Readonly` address
 
 • **address**: *Address*
 
-*Inherited from [Contract](_base_contract_.contract.md).[address](_base_contract_.contract.md#address)*
+*Inherited from [Contract](_base_contract_.contract.md).[address](_base_contract_.contract.md#readonly-address)*
 
-*Defined in [base/Contract.ts:34](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/base/Contract.ts#L34)*
+*Defined in [base/Contract.ts:34](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/base/Contract.ts#L34)*
 
 ___
 
-###  api
+### `Readonly` api
 
 • **api**: *ApiObject‹"promise"›*
 
-*Inherited from [Base](_base_util_.base.md).[api](_base_util_.base.md#api)*
+*Inherited from [Base](_base_util_.base.md).[api](_base_util_.base.md#readonly-api)*
 
-*Defined in [base/util.ts:16](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/base/util.ts#L16)*
+*Defined in [base/util.ts:16](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/base/util.ts#L16)*
 
 ___
 
-###  decorateMethod
+### `Readonly` decorateMethod
 
 • **decorateMethod**: *DecorateMethod‹"promise"›*
 
-*Inherited from [Base](_base_util_.base.md).[decorateMethod](_base_util_.base.md#decoratemethod)*
+*Inherited from [Base](_base_util_.base.md).[decorateMethod](_base_util_.base.md#readonly-decoratemethod)*
 
-*Defined in [base/util.ts:18](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/base/util.ts#L18)*
+*Defined in [base/util.ts:18](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/base/util.ts#L18)*
 
 ___
 
-###  registry
+### `Readonly` registry
 
 • **registry**: *Registry*
 
-*Inherited from [Base](_base_util_.base.md).[registry](_base_util_.base.md#registry)*
+*Inherited from [Base](_base_util_.base.md).[registry](_base_util_.base.md#readonly-registry)*
 
-*Defined in [base/util.ts:20](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/base/util.ts#L20)*
+*Defined in [base/util.ts:20](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/base/util.ts#L20)*
 
 ## Accessors
 
@@ -114,7 +114,7 @@ ___
 
 *Inherited from [BaseWithTxAndRpcCall](_base_util_.basewithtxandrpccall.md).[hasRpcContractsCall](_base_util_.basewithtxandrpccall.md#hasrpccontractscall)*
 
-*Defined in [base/util.ts:70](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/base/util.ts#L70)*
+*Defined in [base/util.ts:70](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/base/util.ts#L70)*
 
 **Returns:** *boolean*
 
@@ -126,7 +126,7 @@ ___
 
 *Inherited from [Base](_base_util_.base.md).[messages](_base_util_.base.md#messages)*
 
-*Defined in [base/util.ts:31](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/base/util.ts#L31)*
+*Defined in [base/util.ts:31](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/base/util.ts#L31)*
 
 **Returns:** *ContractMessage[]*
 
@@ -138,7 +138,7 @@ ___
 
 *Inherited from [Contract](_base_contract_.contract.md).[call](_base_contract_.contract.md#call)*
 
-*Defined in [base/Contract.ts:42](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/base/Contract.ts#L42)*
+*Defined in [base/Contract.ts:42](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/base/Contract.ts#L42)*
 
 **Parameters:**
 
@@ -156,7 +156,7 @@ Name | Type |
 
 *Inherited from [Contract](_base_contract_.contract.md).[call](_base_contract_.contract.md#call)*
 
-*Defined in [base/Contract.ts:43](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/base/Contract.ts#L43)*
+*Defined in [base/Contract.ts:43](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/base/Contract.ts#L43)*
 
 **Parameters:**
 
@@ -178,7 +178,7 @@ ___
 
 *Inherited from [Base](_base_util_.base.md).[getMessage](_base_util_.base.md#getmessage)*
 
-*Defined in [base/util.ts:41](https://github.com/polkadot-js/api/blob/3665690444/packages/api-contract/src/base/util.ts#L41)*
+*Defined in [base/util.ts:41](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/api-contract/src/base/util.ts#L41)*
 
 **Parameters:**
 

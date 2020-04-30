@@ -30,17 +30,17 @@
 
 ### Properties
 
-* [BYTES_PER_ELEMENT](_types_interfaces_.iu8a.md#bytes_per_element)
+* [BYTES_PER_ELEMENT](_types_interfaces_.iu8a.md#readonly-bytes_per_element)
 * [Uint8Array](_types_interfaces_.iu8a.md#uint8array)
-* [[Symbol.toStringTag]](_types_interfaces_.iu8a.md#[symbol.tostringtag])
-* [buffer](_types_interfaces_.iu8a.md#buffer)
-* [byteLength](_types_interfaces_.iu8a.md#bytelength)
-* [byteOffset](_types_interfaces_.iu8a.md#byteoffset)
-* [encodedLength](_types_interfaces_.iu8a.md#encodedlength)
-* [hash](_types_interfaces_.iu8a.md#hash)
-* [isEmpty](_types_interfaces_.iu8a.md#isempty)
-* [length](_types_interfaces_.iu8a.md#length)
-* [registry](_types_interfaces_.iu8a.md#registry)
+* [[Symbol.toStringTag]](_types_interfaces_.iu8a.md#readonly-[symbol.tostringtag])
+* [buffer](_types_interfaces_.iu8a.md#readonly-buffer)
+* [byteLength](_types_interfaces_.iu8a.md#readonly-bytelength)
+* [byteOffset](_types_interfaces_.iu8a.md#readonly-byteoffset)
+* [encodedLength](_types_interfaces_.iu8a.md#readonly-encodedlength)
+* [hash](_types_interfaces_.iu8a.md#readonly-hash)
+* [isEmpty](_types_interfaces_.iu8a.md#readonly-isempty)
+* [length](_types_interfaces_.iu8a.md#readonly-length)
+* [registry](_types_interfaces_.iu8a.md#readonly-registry)
 
 ### Methods
 
@@ -80,7 +80,7 @@
 
 ## Properties
 
-###  BYTES_PER_ELEMENT
+### `Readonly` BYTES_PER_ELEMENT
 
 • **BYTES_PER_ELEMENT**: *number*
 
@@ -100,7 +100,7 @@ Defined in node_modules/typescript/lib/lib.es5.d.ts:2257
 
 ___
 
-###  [Symbol.toStringTag]
+### `Readonly` [Symbol.toStringTag]
 
 • **[Symbol.toStringTag]**: *"UInt8Array"*
 
@@ -110,7 +110,7 @@ Defined in node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:276
 
 ___
 
-###  buffer
+### `Readonly` buffer
 
 • **buffer**: *ArrayBufferLike*
 
@@ -122,7 +122,7 @@ The ArrayBuffer instance referenced by the array.
 
 ___
 
-###  byteLength
+### `Readonly` byteLength
 
 • **byteLength**: *number*
 
@@ -134,7 +134,7 @@ The length in bytes of the array.
 
 ___
 
-###  byteOffset
+### `Readonly` byteOffset
 
 • **byteOffset**: *number*
 
@@ -146,47 +146,47 @@ The offset in bytes of the array.
 
 ___
 
-###  encodedLength
+### `Readonly` encodedLength
 
 • **encodedLength**: *number*
 
-*Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[encodedLength](_extrinsic_signerpayload_.signerpayloadtype.md#encodedlength)*
+*Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[encodedLength](_extrinsic_signerpayload_.signerpayloadtype.md#readonly-encodedlength)*
 
-*Defined in [packages/types/src/types/codec.ts:40](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/codec.ts#L40)*
+*Defined in [packages/types/src/types/codec.ts:40](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/codec.ts#L40)*
 
 **`description`** The length of the value when encoded as a Uint8Array
 
 ___
 
-###  hash
+### `Readonly` hash
 
 • **hash**: *H256*
 
-*Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[hash](_extrinsic_signerpayload_.signerpayloadtype.md#hash)*
+*Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[hash](_extrinsic_signerpayload_.signerpayloadtype.md#readonly-hash)*
 
-*Defined in [packages/types/src/types/codec.ts:45](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/codec.ts#L45)*
+*Defined in [packages/types/src/types/codec.ts:45](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/codec.ts#L45)*
 
 **`description`** Returns a hash of the value
 
 ___
 
-###  isEmpty
+### `Readonly` isEmpty
 
 • **isEmpty**: *boolean*
 
-*Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[isEmpty](_extrinsic_signerpayload_.signerpayloadtype.md#isempty)*
+*Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[isEmpty](_extrinsic_signerpayload_.signerpayloadtype.md#readonly-isempty)*
 
-*Defined in [packages/types/src/types/codec.ts:50](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/codec.ts#L50)*
+*Defined in [packages/types/src/types/codec.ts:50](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/codec.ts#L50)*
 
 **`description`** Checks if the value is an empty value
 
 ___
 
-###  length
+### `Readonly` length
 
 • **length**: *number*
 
-*Inherited from [IU8a](_types_interfaces_.iu8a.md).[length](_types_interfaces_.iu8a.md#length)*
+*Inherited from [IU8a](_types_interfaces_.iu8a.md).[length](_types_interfaces_.iu8a.md#readonly-length)*
 
 Defined in node_modules/typescript/lib/lib.es5.d.ts:2102
 
@@ -194,13 +194,13 @@ The length of the array.
 
 ___
 
-###  registry
+### `Readonly` registry
 
 • **registry**: *[Registry](_types_registry_.registry.md)*
 
-*Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[registry](_extrinsic_signerpayload_.signerpayloadtype.md#registry)*
+*Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[registry](_extrinsic_signerpayload_.signerpayloadtype.md#readonly-registry)*
 
-*Defined in [packages/types/src/types/codec.ts:55](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/codec.ts#L55)*
+*Defined in [packages/types/src/types/codec.ts:55](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/codec.ts#L55)*
 
 **`description`** The registry associated with this object
 
@@ -222,7 +222,7 @@ ___
 
 ▸ **bitLength**(): *number*
 
-*Defined in [packages/types/src/types/interfaces.ts:54](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/interfaces.ts#L54)*
+*Defined in [packages/types/src/types/interfaces.ts:54](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/interfaces.ts#L54)*
 
 **Returns:** *number*
 
@@ -271,7 +271,7 @@ ___
 
 *Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[eq](_extrinsic_signerpayload_.signerpayloadtype.md#eq)*
 
-*Defined in [packages/types/src/types/codec.ts:60](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/codec.ts#L60)*
+*Defined in [packages/types/src/types/codec.ts:60](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/codec.ts#L60)*
 
 **`description`** Compares the value of the input to see if there is a match
 
@@ -965,7 +965,7 @@ ___
 
 *Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[toHex](_extrinsic_signerpayload_.signerpayloadtype.md#tohex)*
 
-*Defined in [packages/types/src/types/codec.ts:65](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/codec.ts#L65)*
+*Defined in [packages/types/src/types/codec.ts:65](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/codec.ts#L65)*
 
 **`description`** Returns a hex string representation of the value. isLe returns a LE (number-only) representation
 
@@ -985,7 +985,7 @@ ___
 
 *Overrides [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[toHuman](_extrinsic_signerpayload_.signerpayloadtype.md#tohuman)*
 
-*Defined in [packages/types/src/types/interfaces.ts:55](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/interfaces.ts#L55)*
+*Defined in [packages/types/src/types/interfaces.ts:55](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/interfaces.ts#L55)*
 
 **Parameters:**
 
@@ -1003,7 +1003,7 @@ ___
 
 *Overrides [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[toJSON](_extrinsic_signerpayload_.signerpayloadtype.md#tojson)*
 
-*Defined in [packages/types/src/types/interfaces.ts:56](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/interfaces.ts#L56)*
+*Defined in [packages/types/src/types/interfaces.ts:56](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/interfaces.ts#L56)*
 
 **Returns:** *any*
 
@@ -1029,7 +1029,7 @@ ___
 
 *Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[toRawType](_extrinsic_signerpayload_.signerpayloadtype.md#torawtype)*
 
-*Defined in [packages/types/src/types/codec.ts:80](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/codec.ts#L80)*
+*Defined in [packages/types/src/types/codec.ts:80](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/codec.ts#L80)*
 
 **`description`** Returns the base runtime type name for this instance
 
@@ -1059,7 +1059,7 @@ ___
 
 *Inherited from [SignerPayloadType](_extrinsic_signerpayload_.signerpayloadtype.md).[toU8a](_extrinsic_signerpayload_.signerpayloadtype.md#tou8a)*
 
-*Defined in [packages/types/src/types/codec.ts:91](https://github.com/polkadot-js/api/blob/3665690444/packages/types/src/types/codec.ts#L91)*
+*Defined in [packages/types/src/types/codec.ts:91](https://github.com/polkadot-js/api/blob/c82b85ef79/packages/types/src/types/codec.ts#L91)*
 
 **`description`** Encodes the value as a Uint8Array as per the SCALE specifications
 
