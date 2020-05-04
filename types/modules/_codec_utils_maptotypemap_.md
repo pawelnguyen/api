@@ -14,7 +14,7 @@
 
 ▸ **mapToTypeMap**(`registry`: [Registry](../interfaces/_types_registry_.registry.md), `input`: Record‹string, keyof InterfaceTypes | [Constructor](../interfaces/_types_codec_.constructor.md)›): *Record‹string, [Constructor](../interfaces/_types_codec_.constructor.md)›*
 
-*Defined in [packages/types/src/codec/utils/mapToTypeMap.ts:12](https://github.com/polkadot-js/api/blob/2367978f6e/packages/types/src/codec/utils/mapToTypeMap.ts#L12)*
+*Defined in [packages/types/src/codec/utils/mapToTypeMap.ts:12](https://github.com/polkadot-js/api/blob/7d1c93db59/packages/types/src/codec/utils/mapToTypeMap.ts#L12)*
 
 **`description`** takes an input map of the form `{ [string]: string | Constructor }` and returns a map of `{ [string]: Constructor }`
 
