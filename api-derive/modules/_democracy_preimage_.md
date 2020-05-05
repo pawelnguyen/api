@@ -14,7 +14,7 @@
 
 ▸ **preimage**(`api`: ApiInterfaceRx): *function*
 
-*Defined in [packages/api-derive/src/democracy/preimage.ts:19](https://github.com/polkadot-js/api/blob/4a497fa970/packages/api-derive/src/democracy/preimage.ts#L19)*
+*Defined in [packages/api-derive/src/democracy/preimage.ts:19](https://github.com/polkadot-js/api/blob/94f81db568/packages/api-derive/src/democracy/preimage.ts#L19)*
 
 **Parameters:**
 
