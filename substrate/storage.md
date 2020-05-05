@@ -99,7 +99,7 @@ ___
 - **interface**: `api.query.babe.genesisSlot`
 - **summary**:   The slot at which the first epoch actually started. This is 0 until the first block of the chain. 
  
-### initialized(): `Option<MaybeVrf>`
+### initialized(): `Option<MaybeRandomness>`
 - **interface**: `api.query.babe.initialized`
 - **summary**:   Temporary value (cleared at block finalization) which is `Some` if per-block initialization has already been called for current block. 
  
@@ -129,7 +129,7 @@ ___
 
   Once a segment reaches this length, we begin the next one. We reset all segments and return to `0` at the beginning of every epoch. 
  
-### underConstruction(`u32`): `Vec<RawVRFOutput>`
+### underConstruction(`u32`): `Vec<Randomness>`
 - **interface**: `api.query.babe.underConstruction`
 
 ___

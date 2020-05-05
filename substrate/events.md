@@ -204,7 +204,7 @@ ___
 ## elections
  
 ### EmptyTerm()
-- **summary**:   No (or not enough) candidates existed for this round. 
+- **summary**:   No (or not enough) candidates existed for this round. This is different from `NewTerm([])`. See the description of `NewTerm`. 
  
 ### MemberKicked(`AccountId`)
 - **summary**:   A member has been removed. This should always be followed by either `NewTerm` ot `EmptyTerm`. 
@@ -213,7 +213,7 @@ ___
 - **summary**:   A member has renounced their candidacy. 
  
 ### NewTerm(`Vec<(AccountId, Balance)>`)
-- **summary**:   A new term with new members. This indicates that enough candidates existed, not that enough have has been elected. The inner value must be examined for this purpose. 
+- **summary**:   A new term with new members. This indicates that enough candidates existed to run the election, not that enough have has been elected. The inner value must be examined for this purpose. A `NewTerm([])` indicates that some candidates got their bond slashed and none were elected, whilst `EmptyTerm` means that no candidates existed to begin with. 
  
 ### VoterReported(`AccountId`, `AccountId`, `bool`)
 - **summary**:   A voter (first element) was reported (byt the second element) with the the report being successful or not (third element). 
@@ -420,7 +420,7 @@ ___
 ### KeyChanged(`AccountId`)
 - **summary**:   The sudoer just switched identity; the old key is supplied. 
  
-### Sudid(`bool`)
+### Sudid(`DispatchResult`)
 - **summary**:   A sudo just took place. 
  
 ### SudoAsDone(`bool`)

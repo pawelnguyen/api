@@ -91,6 +91,16 @@ ___
 
   - Contains a limited number of reads and writes.
 
+  ---------------------
+
+  - Base Weight:
+
+      - Creating: 27.56 µs
+
+      - Killing: 35.11 µs
+
+  - DB Weight: 1 Read, 1 Write to `who`
+
   \# \</weight> 
  
 ### transfer(dest: `<T::Lookup as StaticLookup>::Source`, value: `Compact<T::Balance>`)
@@ -119,7 +129,13 @@ ___
 
     - `transfer_keep_alive` works the same way as `transfer`, but has an additional    check that the transfer will not kill the origin account. 
 
-  
+  ---------------------------------
+
+  - Base Weight: 73.64 µs, worst case scenario (account created, account removed)
+
+  - DB Weight: 1 Read and 1 Write to destination account
+
+  - Origin account is already in memory, so no DB operations for them.
 
   \# \</weight> 
  
@@ -129,7 +145,15 @@ ___
 
   99% of the time you want [`transfer`] instead. 
 
-  [`transfer`]: struct.Module.html#method.transfer 
+  [`transfer`]: struct.Module.html#method.transfer \# \<weight>
+
+   
+
+  - Cheaper than transfer because account cannot be killed.
+
+  - Base Weight: 51.4 µs
+
+  - DB Weight: 1 Read and 1 Write to dest (sender is in overlay already)#</weight> 
 
 ___
 
@@ -956,11 +980,7 @@ ___
 
   - One event.
 
-  - Benchmarks:
-
-    - 78.71 + R * 0.965 µs (min squares analysis)
-
-    - 94.28 + R * 0.991 µs (min squares analysis)
+  - Benchmark: 24.63 + R * 0.53 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -988,11 +1008,7 @@ ___
 
   - One event.
 
-  - Benchmarks:
-
-    - 135.3 + R * 0.574 + X * 3.394 µs (min squares analysis)
-
-    - 144.3 + R * 0.316 + X * 3.53 µs (min squares analysis)
+  - Benchmark: 50.05 + R * 0.321 + X * 1.688 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1026,9 +1042,9 @@ ___
 
   - Benchmarks:
 
-    - 152.3 + R * 0.306 + S * 4.967 + X * 1.697 µs (min squares analysis)
+    - 57.36 + R * 0.019 + S * 2.577 + X * 0.874 µs (median slopes analysis)
 
-    - 139.5 + R * 0.466 + S * 5.304 + X * 1.895 µs (min squares analysis)
+    - 57.06 + R * 0.006 + S * 2.579 + X * 0.878 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1056,7 +1072,7 @@ ___
 
   - One event.
 
-  - Benchmark: 167.4 + R * 1.107 + S * 5.343 + X * 2.294 µs (min squares analysis)
+  - Benchmark: 101.9 + R * 0.091 + S * 2.589 + X * 0.871 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1088,7 +1104,7 @@ ___
 
   - One event.
 
-  - Benchmark: 110.7 + R * 1.066 + X * 3.402 µs (min squares analysis)
+  - Benchmark: 47.77 + R * 0.336 + X * 1.664 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1120,11 +1136,7 @@ ___
 
   - One event.
 
-  - Benchmarks:
-
-    - 154 + R * 0.932 + X * 3.302 µs (min squares analysis)
-
-    - 172.9 + R * 0.69 + X * 3.304 µs (min squares analysis)
+  - Benchmark: 59.02 + R * 0.488 + X * 1.7 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1146,7 +1158,7 @@ ___
 
   - One storage mutation `O(R)`.
 
-  - Benchmark: 24.59 + R * 0.832 µs (min squares analysis)
+  - Benchmark: 10.05 + R * 0.438 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1168,9 +1180,7 @@ ___
 
   - One storage mutation `O(R)`.
 
-  - Benchmarks:
-
-    - 23.81 + R * 0.774 µs (min squares analysis)
+  - Benchmark: 8.848 + R * 0.425 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1192,7 +1202,7 @@ ___
 
   - One storage mutation `O(R)`.
 
-  - Benchmark: 22.85 + R * 0.853 µs (min squares analysis)
+  - Benchmark: 8.985 + R * 0.413 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1224,11 +1234,7 @@ ___
 
   - One event.
 
-  - Benchmarks:
-
-    - 136.6 + R * 0.62 + X * 2.62 µs (min squares analysis)
-
-    - 146.2 + R * 0.372 + X * 2.98 µs (min squares analysis)
+  - Benchmark: 59.44 + R * 0.389 + X * 1.434 µs (min squares analysis)
 
   \# \</weight> 
  
@@ -1264,11 +1270,7 @@ ___
 
     - One storage-exists (`IdentityOf::contains_key`).
 
-  - Benchmarks:
-
-    - 115.2 + P * 5.11 + S * 6.67 µs (min squares analysis)
-
-    - 121 + P * 4.852 + S * 7.111 µs (min squares analysis)
+  - Benchmark: 39.43 + P * 2.522 + S * 3.698 µs (min squares analysis)
 
   \# \</weight> 
 
@@ -1279,6 +1281,21 @@ ___
  
 ### heartbeat(heartbeat: `Heartbeat<T::BlockNumber>`, _signature: `<T::AuthorityId as RuntimeAppPublic>::Signature`)
 - **interface**: `api.tx.imOnline.heartbeat`
+- **summary**:   \# \<weight>
+
+   
+
+  - Complexity: `O(K + E)` where K is length of `Keys` and E is length of  `Heartbeat.network_state.external_address` 
+
+    - `O(K)`: decoding of length `K` 
+
+    - `O(E)`: decoding/encoding of length `E`
+
+  - DbReads: pallet_session `Validators`, pallet_session `CurrentIndex`, `Keys`,  `ReceivedHeartbeats` 
+
+  - DbWrites: `ReceivedHeartbeats`
+
+  \# \</weight> 
 
 ___
 
@@ -2761,13 +2778,9 @@ ___
 
    
 
-  - `O(K)` with `K` being complexity of `on_killed_account`
+  - `O(1)`
 
   - 1 storage read and deletion.
-
-  - 1 call to `on_killed_account` callback with unknown complexity `K`
-
-  - 1 event.
 
   \# \</weight> 
 
@@ -2904,9 +2917,13 @@ ___
 
   - `O(T)` where `T` complexity of `on_timestamp_set`
 
-  - 2 storage mutations (codec `O(1)`).
+  - 1 storage read and 1 storage mutation (codec `O(1)`). (because of `DidUpdate::take` in `on_finalize`)
 
   - 1 event handler `on_timestamp_set` `O(T)`.
+
+  - Benchmark: 8.523 (min squares analysis)
+
+    - NOTE: This benchmark was done for a runtime with insignificant `on_timestamp_set` handlers.    New benchmarking is needed when adding new handlers. 
 
   \# \</weight> 
 
@@ -2923,11 +2940,11 @@ ___
 
    
 
-  - O(1).
+  - Complexity: O(1).
 
-  - Limited storage reads.
+  - DbReads: `Proposals`, `Approvals`
 
-  - One DB change.
+  - DbWrite: `Approvals`
 
   \# \</weight> 
  
@@ -2945,11 +2962,11 @@ ___
 
    
 
-  - `O(T)`
+  - Complexity: `O(T)` where `T` is the number of tippers.  decoding `Tipper` vec of length `T`.   `T` is charged as upper bound given by `ContainsLengthBound`.   The actual cost depends on the implementation of `T::Tippers`. 
 
-  - One storage retrieval (codec `O(T)`) and two removals.
+  - DbReads: `Tips`, `Tippers`, `tip finder`
 
-  - Up to three balance operations.
+  - DbWrites: `Reasons`, `Tips`, `Tippers`, `tip finder`
 
   \# \</weight> 
  
@@ -2961,11 +2978,11 @@ ___
 
    
 
-  - O(1).
+  - Complexity: O(1)
 
-  - Limited storage reads.
+  - DbReads: `ProposalCount`, `origin account`
 
-  - One DB change, one extra DB entry.
+  - DbWrites: `ProposalCount`, `Proposals`, `origin account`
 
   \# \</weight> 
  
@@ -2977,11 +2994,11 @@ ___
 
    
 
-  - O(1).
+  - Complexity: O(1)
 
-  - Limited storage reads.
+  - DbReads: `Proposals`, `rejected proposer account`
 
-  - One DB clear.
+  - DbWrites: `Proposals`, `rejected proposer account`
 
   \# \</weight> 
  
@@ -3003,13 +3020,13 @@ ___
 
    
 
-  - `O(R)` where `R` length of `reason`.
+  - Complexity: `O(R)` where `R` length of `reason`.
 
-  - One balance operation.
+    - encoding and hashing of 'reason'
 
-  - One storage mutation (codec `O(R)`).
+  - DbReads: `Reasons`, `Tips`, `who account data`
 
-  - One event.
+  - DbWrites: `Tips`, `who account data`
 
   \# \</weight> 
  
@@ -3029,13 +3046,13 @@ ___
 
    
 
-  - `O(T)`
+  - Complexity: `O(1)`
 
-  - One balance operation.
+    - Depends on the length of `T::Hash` which is fixed.
 
-  - Two storage removals (one read, codec `O(T)`).
+  - DbReads: `Tips`, `origin account`
 
-  - One event.
+  - DbWrites: `Reasons`, `Tips`, `origin account`
 
   \# \</weight> 
  
@@ -3055,11 +3072,13 @@ ___
 
    
 
-  - `O(T)`
+  - Complexity: `O(T)` where `T` is the number of tippers.  decoding `Tipper` vec of length `T`, insert tip and check closing,   `T` is charged as upper bound given by `ContainsLengthBound`.   The actual cost depends on the implementation of `T::Tippers`. 
 
-  - One storage mutation (codec `O(T)`), one storage read `O(1)`.
+    Actually weight could be lower as it depends on how many tips are in `OpenTip` but it   is weighted as if almost full i.e of length `T-1`. 
 
-  - Up to one event.
+  - DbReads: `Tippers`, `Tips`
+
+  - DbWrites: `Tips`
 
   \# \</weight> 
  
@@ -3081,11 +3100,15 @@ ___
 
    
 
-  - `O(R + T)` where `R` length of `reason`, `T` is the number of tippers. `T` is  naturally capped as a membership set, `R` is limited through transaction-size. 
+  - Complexity: `O(R + T)` where `R` length of `reason`, `T` is the number of tippers.
 
-  - Two storage insertions (codecs `O(R)`, `O(T)`), one read `O(1)`.
+    - `O(T)`: decoding `Tipper` vec of length `T`    `T` is charged as upper bound given by `ContainsLengthBound`.     The actual cost depends on the implementation of `T::Tippers`. 
 
-  - One event.
+    - `O(R)`: hashing and encoding of reason of length `R`
+
+  - DbReads: `Tippers`, `Reasons`
+
+  - DbWrites: `Reasons`, `Tips`
 
   \# \</weight> 
 
@@ -3131,6 +3154,20 @@ ___
   - One event.
 
   - Storage: inserts one item, value size bounded by `MaxSignatories`, with a  deposit taken for its lifetime of   `MultisigDepositBase + threshold * MultisigDepositFactor`. 
+
+  ----------------------------------
+
+  - Base Weight:
+
+      - Create: 44.71 + 0.088 * S
+
+      - Approve: 31.48 + 0.116 * S
+
+  - DB Weight:
+
+      - Read: Multisig Storage, [Caller Account]
+
+      - Write: Multisig Storage, [Caller Account]
 
   \# \</weight> 
  
@@ -3180,6 +3217,24 @@ ___
 
   - Storage: inserts one item, value size bounded by `MaxSignatories`, with a  deposit taken for its lifetime of   `MultisigDepositBase + threshold * MultisigDepositFactor`. 
 
+  -------------------------------
+
+  - Base Weight:
+
+      - Create: 46.55 + 0.089 * S µs
+
+      - Approve: 34.03 + .112 * S µs
+
+      - Complete: 40.36 + .225 * S µs
+
+  - DB Weight:
+
+      - Reads: Multisig Storage, [Caller Account]
+
+      - Writes: Multisig Storage, [Caller Account]
+
+  - Plus Call Weight
+
   \# \</weight> 
  
 ### asSub(index: `u16`, call: `Box<<T as Trait>::Call>`)
@@ -3192,7 +3247,9 @@ ___
 
    
 
-  - The weight of the `call` + 10,000.
+  - Base weight: 2.861 µs
+
+  - Plus the weight of the `call`
 
   \# \</weight> 
  
@@ -3210,9 +3267,11 @@ ___
 
    
 
-  - The sum of the weights of the `calls`.
+  - Base weight: 14.39 + .987 * c µs
 
-  - One event.
+  - Plus the sum of the weights of the `calls`.
+
+  - Plus one additional event. (repeat read/write)
 
   \# \</weight> 
 
@@ -3250,6 +3309,16 @@ ___
 
   - Storage: removes one item.
 
+  ----------------------------------
+
+  - Base Weight: 37.6 + 0.084 * S
+
+  - DB Weight:
+
+      - Read: Multisig Storage, [Caller Account]
+
+      - Write: Multisig Storage, [Caller Account]
+
   \# \</weight> 
 
 ___
@@ -3271,11 +3340,19 @@ ___
 
   - `O(1)`.
 
-  - One balance-lock operation.
+  - DbWeight: 2 Reads, 2 Writes
 
-  - One storage read (codec `O(1)`) and up to one removal.
+      - Reads: Vesting Storage, Balances Locks, [Sender Account]
 
-  - One event.
+      - Writes: Vesting Storage, Balances Locks, [Sender Account]
+
+  - Benchmark:
+
+      - Unlocked: 48.76 + .048 * l µs (min square analysis)
+
+      - Locked: 44.43 + .284 * l µs (min square analysis)
+
+  - Using 50 µs fixed. Assuming less than 50 locks on any user, else we may want factor in number of locks.
 
   \# \</weight> 
  
@@ -3295,13 +3372,19 @@ ___
 
   - `O(1)`.
 
-  - Up to one account lookup.
+  - DbWeight: 3 Reads, 3 Writes
 
-  - One balance-lock operation.
+      - Reads: Vesting Storage, Balances Locks, Target Account
 
-  - One storage read (codec `O(1)`) and up to one removal.
+      - Writes: Vesting Storage, Balances Locks, Target Account
 
-  - One event.
+  - Benchmark:
+
+      - Unlocked: 44.3 + .294 * l µs (min square analysis)
+
+      - Locked: 48.16 + .103 * l µs (min square analysis)
+
+  - Using 50 µs fixed. Assuming less than 50 locks on any user, else we may want factor in number of locks.
 
   \# \</weight> 
  
@@ -3323,6 +3406,16 @@ ___
 
    
 
-  - Creates a new storage entry, but is protected by a minimum transfer   amount needed to succeed. 
+  - `O(1)`.
+
+  - DbWeight: 3 Reads, 3 Writes
+
+      - Reads: Vesting Storage, Balances Locks, Target Account, [Sender Account]
+
+      - Writes: Vesting Storage, Balances Locks, Target Account, [Sender Account]
+
+  - Benchmark: 100.3 + .365 * l µs (min square analysis)
+
+  - Using 100 µs fixed. Assuming less than 50 locks on any user, else we may want factor in number of locks.
 
   \# \</weight> 
