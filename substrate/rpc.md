@@ -16,6 +16,8 @@ The following sections contain RPC methods that are Remote Calls available by de
 
 - **[engine](#engine)**
 
+- **[grandpa](#grandpa)**
+
 - **[offchain](#offchain)**
 
 - **[payment](#payment)**
@@ -191,6 +193,16 @@ ___
 - **interface**: `api.rpc.engine.finalizeBlock`
 - **jsonrpc**: `engine_finalizeBlock`
 - **summary**: Instructs the manual-seal authorship task to finalize a block
+
+___
+
+
+## grandpa
+ 
+### roundState(): `ReportedRoundStates`
+- **interface**: `api.rpc.grandpa.roundState`
+- **jsonrpc**: `grandpa_roundState`
+- **summary**: Returns the state of the current best round state as well as the ongoing background rounds
 
 ___
 
