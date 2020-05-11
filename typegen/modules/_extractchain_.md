@@ -14,6 +14,6 @@
 
 ▸ **main**(): *void*
 
-*Defined in [extractChain.ts:28](https://github.com/polkadot-js/api/blob/3879986a75/packages/typegen/src/extractChain.ts#L28)*
+*Defined in [extractChain.ts:28](https://github.com/polkadot-js/api/blob/53d081df65/packages/typegen/src/extractChain.ts#L28)*
 
 **Returns:** *void*
